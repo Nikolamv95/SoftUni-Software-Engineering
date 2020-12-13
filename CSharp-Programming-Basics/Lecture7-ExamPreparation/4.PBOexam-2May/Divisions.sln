@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Divisions", "Divisions\Divisions.csproj", "{4F9EBE8C-DC4B-4263-9AEB-BE08D63F5387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetParking", "VetParking\VetParking.csproj", "{83A16E31-F4F0-483B-859C-A40494E11457}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F9EBE8C-DC4B-4263-9AEB-BE08D63F5387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9EBE8C-DC4B-4263-9AEB-BE08D63F5387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9EBE8C-DC4B-4263-9AEB-BE08D63F5387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9EBE8C-DC4B-4263-9AEB-BE08D63F5387}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A16E31-F4F0-483B-859C-A40494E11457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A16E31-F4F0-483B-859C-A40494E11457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A16E31-F4F0-483B-859C-A40494E11457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A16E31-F4F0-483B-859C-A40494E11457}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F0B24E5-0930-4F0C-BC83-2B85DB89CD63}
+	EndGlobalSection
+EndGlobal
