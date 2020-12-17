@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello SoftUni", "Hello SoftUni\Hello SoftUni.csproj", "{BED700A4-3B7E-44BB-AA9D-ABE12C1F3F27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Numbers1to10", "2. Numbers1to10\2. Numbers1to10.csproj", "{2004F2D6-D777-4A06-99F0-04CC694CB2F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BED700A4-3B7E-44BB-AA9D-ABE12C1F3F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED700A4-3B7E-44BB-AA9D-ABE12C1F3F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED700A4-3B7E-44BB-AA9D-ABE12C1F3F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED700A4-3B7E-44BB-AA9D-ABE12C1F3F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2004F2D6-D777-4A06-99F0-04CC694CB2F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2004F2D6-D777-4A06-99F0-04CC694CB2F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2004F2D6-D777-4A06-99F0-04CC694CB2F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2004F2D6-D777-4A06-99F0-04CC694CB2F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82F41D8B-5D10-4E0D-8441-BA3C72A41756}
+	EndGlobalSection
+EndGlobal
