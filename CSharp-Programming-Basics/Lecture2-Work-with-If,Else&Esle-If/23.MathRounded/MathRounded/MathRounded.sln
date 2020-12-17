@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathRounded", "MathRounded\MathRounded.csproj", "{EE7F8127-FF13-4730-9741-870F80B4ADE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbsolutValue", "AbsolutValue\AbsolutValue.csproj", "{36564F7D-A111-413C-B68B-6768C4AE7647}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE7F8127-FF13-4730-9741-870F80B4ADE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7F8127-FF13-4730-9741-870F80B4ADE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7F8127-FF13-4730-9741-870F80B4ADE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7F8127-FF13-4730-9741-870F80B4ADE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36564F7D-A111-413C-B68B-6768C4AE7647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36564F7D-A111-413C-B68B-6768C4AE7647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36564F7D-A111-413C-B68B-6768C4AE7647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36564F7D-A111-413C-B68B-6768C4AE7647}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1A31FBE-A122-4436-B5B7-053D7FAA9D2D}
+	EndGlobalSection
+EndGlobal
