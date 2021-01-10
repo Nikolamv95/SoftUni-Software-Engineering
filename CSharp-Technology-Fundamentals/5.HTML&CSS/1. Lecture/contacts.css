@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    font-family: 'Sansita Swashed', cursive;
+}
+
+#heading1 {
+ background: url('image123.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 600px;
+ color: green;
+ text-align: center;
+ padding: 100px;
+ font-family: "Helvetica";
+}
+
+article{
+   margin: 50px;
+}

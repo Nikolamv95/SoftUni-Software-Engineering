@@ -1,0 +1,26 @@
+body {
+    background: paleturquoise;
+}
+#heading2 {
+    font-size: 30px;
+    color: greenyellow;
+    font: Helvetica sans-serif;
+}
+button{
+    text-transform: uppercase;
+    background-color: chocolate;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+button:hover {
+    background-color: white;
+    color: green;
+    cursor: pointer;
+    border: 1px solid;
+}
+h1#heading.green{
+    color: green;
+}
