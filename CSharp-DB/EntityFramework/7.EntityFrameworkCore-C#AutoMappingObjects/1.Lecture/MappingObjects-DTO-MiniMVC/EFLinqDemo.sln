@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFLinqDemo-MVCmini", "EFLinqDemo\EFLinqDemo-MVCmini.csproj", "{B75E7F48-17D1-47D3-B922-5DFD02F39066}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B75E7F48-17D1-47D3-B922-5DFD02F39066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75E7F48-17D1-47D3-B922-5DFD02F39066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75E7F48-17D1-47D3-B922-5DFD02F39066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75E7F48-17D1-47D3-B922-5DFD02F39066}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B6E96D69-5BB2-49DD-9FE4-60243C468856}
+	EndGlobalSection
+EndGlobal
