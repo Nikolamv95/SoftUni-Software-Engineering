@@ -1,0 +1,25 @@
+I`m a snake
+I`m food, eat me
+I`m food, eat me
+I`m obstacle
+I`m obstacle
+I`m a snake
+I`m food, eat me
+I`m food, eat me
+I`m obstacle
+I`m obstacle
+I`m a snake
+I`m food, eat me
+I`m food, eat me
+I`m obstacle
+I`m obstacle
+I`m a snake
+I`m food, eat me
+I`m food, eat me
+I`m obstacle
+I`m obstacle
+I`m a snake
+I`m food, eat me
+I`m food, eat me
+I`m obstacle
+I`m obstacle
