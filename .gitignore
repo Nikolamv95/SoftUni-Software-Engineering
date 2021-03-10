@@ -1,2 +1,15 @@
 bin
 obj
+dgspec
+targets
+props
+assets
+cache
+CopyComplete
+pdb
+dll
+/CSharp-DB/EntityFramework/7.EntityFrameworkCore-C#AutoMappingObjects/1.Lecture/FastFood/FastFood.Core/wwwroot/lib/jquery-validation/dist/*.js
+/CSharp-DB/EntityFramework/7.EntityFrameworkCore-C#AutoMappingObjects/1.Lecture/FastFood/FastFood.Core/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map
+/CSharp-DB/EntityFramework/7.EntityFrameworkCore-C#AutoMappingObjects/1.Lecture/FastFood/FastFood.Core/wwwroot/lib/bootstrap/dist/css/*.map
+bootstrap-reboot.css.map
+*.svg
