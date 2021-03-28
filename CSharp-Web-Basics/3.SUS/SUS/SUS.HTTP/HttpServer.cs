@@ -78,8 +78,15 @@ namespace SUS.HTTP
 
                 //Optional
                 response.Headers.Add(new Header("Server", "SUS Server 1.0"));
-                response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
-                    { HttpOnly = true, MaxAge = 60 * 24 * 60 * 60 });
+
+                var sessionCookie = request.Cookies.FirstOrDefault(x => x.Name == HttpConstants.SessionCookieName);
+                if (sessionCookie != null)
+                {
+                    var responseSessionCookie = new ResponseCookie(sessionCookie.Name, sessionCookie.Value);
+                    responseSessionCookie.Path = "/";
+                    response.Cookies.Add(responseSessionCookie);
+                }
+
 
                 //Convert headerText to headerBytes
                 var responseHeaderBytes = Encoding.UTF8.GetBytes(response.ToString());

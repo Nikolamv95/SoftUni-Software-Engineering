@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.HTTP", "SUS.HTTP\SUS.HTTP.csproj", "{FE8832C0-6C75-4670-AE70-54F18CD7E033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUS.HTTP", "SUS.HTTP\SUS.HTTP.csproj", "{FE8832C0-6C75-4670-AE70-54F18CD7E033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.MvcFramework", "SUS.MvcFramework\SUS.MvcFramework.csproj", "{A241687A-ADD4-43B8-A92D-C5D6EA527CE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUS.MvcFramework", "SUS.MvcFramework\SUS.MvcFramework.csproj", "{A241687A-ADD4-43B8-A92D-C5D6EA527CE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{DA165DAF-B6B6-4F8A-8CD7-171CDB040630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMvcApp", "MyFirstMvcApp\MyFirstMvcApp.csproj", "{BB33E2A8-6B5D-4E21-825B-BEA399F41F88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BattleCards", "MyFirstMvcApp\BattleCards.csproj", "{BB33E2A8-6B5D-4E21-825B-BEA399F41F88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUS.MvcFramework.Tests", "SUS.MvcFramework.Tests\SUS.MvcFramework.Tests.csproj", "{70EA96FF-6CDD-41C1-9295-339610A86561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{BB33E2A8-6B5D-4E21-825B-BEA399F41F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB33E2A8-6B5D-4E21-825B-BEA399F41F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB33E2A8-6B5D-4E21-825B-BEA399F41F88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70EA96FF-6CDD-41C1-9295-339610A86561}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EA96FF-6CDD-41C1-9295-339610A86561}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EA96FF-6CDD-41C1-9295-339610A86561}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EA96FF-6CDD-41C1-9295-339610A86561}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

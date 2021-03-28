@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using SUS.HTTP;
 using System.Threading.Tasks;
-using MyFirstMvcApp.Controllers;
+using BattleCards.Controllers;
 using SUS.MvcFramework;
 
-namespace MyFirstMvcApp
+namespace BattleCards
 {
     public class Program
     {
