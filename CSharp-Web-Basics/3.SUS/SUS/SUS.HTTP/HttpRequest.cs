@@ -17,6 +17,7 @@ namespace SUS.HTTP
             this.Headers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.FormDate = new Dictionary<string, string>();
+            this.QueryData = new Dictionary<string, string>();
 
             var lines = requestString.Split(new string[] { HttpConstants.NewLine }, StringSplitOptions.None);
 
@@ -54,7 +55,7 @@ namespace SUS.HTTP
             if (this.Headers.Any(x => x.Name == "Cookie"))
             {
                 var cookiesAsString = this.Headers
-                    .FirstOrDefault(x => x.Name == HttpConstants.RequestCookieHeader)?.Value; //TODO:Added by myself ?
+                    .FirstOrDefault(x => x.Name == HttpConstants.RequestCookieHeader)?.Value; //TODO:Added by myself?
                 var cookies = cookiesAsString.Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries);
 
                 foreach (var cookieAsString in cookies)
@@ -81,33 +82,52 @@ namespace SUS.HTTP
                 this.Session = Sessions[sessionCookie.Value];
             }
 
-            this.Body = bodyBuilder.ToString();
 
-            if (this.Body != string.Empty)
+            if (this.Path.Contains("?"))
             {
-                var parameters = this.Body.Split(new char[]{'&'}, StringSplitOptions.RemoveEmptyEntries);
+                string[] pathParts = this.Path.Split(new char[] {'?'}, 2);
+                this.Path = pathParts[0];
+                this.QueryString = pathParts[1];
+            }
+            else
+            {
+                this.QueryString = null;
+            }
+
+            this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
+
+            SplitParameters(this.Body, this.FormDate);
+            SplitParameters(this.QueryString, this.QueryData);
+        }
+
+        private static void SplitParameters(string parametersAsString, IDictionary<string,string> output)
+        {
+            if (parametersAsString != null)
+            {
+                var parameters = parametersAsString.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
 
                 foreach (var parameter in parameters)
                 {
-                    var parameterParts = parameter.Split('=');
+                    var parameterParts = parameter.Split(new[] { '=' }, 2);
                     var name = parameterParts[0];
                     var value = WebUtility.UrlDecode(parameterParts[1]);
 
-                    if (!this.FormDate.ContainsKey(name))
+                    if (!output.ContainsKey(name))
                     {
-                        this.FormDate.Add(name, value);
+                        output.Add(name, value);
                     }
                 }
             }
-            
         }
 
         public string Path { get; set; }
+        public string QueryString { get; set; }
         public HttpMethod Method { get; set; }
         public ICollection<Header> Headers { get; set; }
         public ICollection<Cookie> Cookies { get; set; }
 
         public IDictionary<string, string> FormDate { get; set; }
+        public IDictionary<string, string> QueryData { get; set; }
         public Dictionary<string, string> Session { get; set; }
 
         public string Body { get; set; }

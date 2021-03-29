@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using BattleCards.ViewModels;
-using SUS.HTTP;
+﻿using SUS.HTTP;
 using SUS.MvcFramework;
 
 namespace BattleCards.Controllers
@@ -23,12 +19,6 @@ namespace BattleCards.Controllers
             {
                 return this.View();
             }
-        }
-
-        public HttpResponse About()
-        {
-            this.SignIn("niki");
-            return this.View();
         }
     }
 }

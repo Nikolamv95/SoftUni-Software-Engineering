@@ -15,8 +15,6 @@ namespace BattleCards.Data
             this.UserCards = new HashSet<UserCard>();
         }
 
-       
-
         public virtual ICollection<UserCard> UserCards { get; set; }
     }
 }
