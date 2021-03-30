@@ -23,12 +23,14 @@ namespace SUS.MvcFramework
 
             AutoRegisterRoutes(routeTable, application, serviceCollection);
 
-            Console.WriteLine("All registered routes:");
+            Console.WriteLine("Registered routes:");
             foreach (var route in routeTable)
             {
                 Console.WriteLine($"{route.HttpMethod} {route.Path}");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Requests");
             IHttpServer server = new HttpServer(routeTable);
             Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome.exe", "http://localhost/");
             await server.StartAsync(port);

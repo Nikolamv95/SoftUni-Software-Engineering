@@ -1,11 +1,10 @@
-﻿using BattleCards.Services;
+﻿using System.ComponentModel.DataAnnotations;
+using Suls.Services;
+using Suls.ViewModels.Users;
 using SUS.HTTP;
 using SUS.MvcFramework;
-using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
-using BattleCards.ViewModels.Register;
 
-namespace BattleCards.Controllers
+namespace Suls.Controllers
 {
     public class UsersController : Controller
     {
@@ -16,26 +15,21 @@ namespace BattleCards.Controllers
             this.usersService = usersService;
         }
 
+        [HttpGet]
         public HttpResponse Login()
         {
             if (this.IsUserSignedIn())
             {
                 return this.Redirect("/");
             }
-    
+
             return this.View();
         }
 
-        [HttpPost]
+        [HttpPost("/users/login")]
         public HttpResponse Login(string username, string password)
         {
-            if (this.IsUserSignedIn())
-            {
-                return this.Redirect("/");
-            }
-
             var userId = this.usersService.GetUserId(username, password);
-
             if (userId == null)
             {
                 return this.Error("Invalid username or password!");
@@ -43,7 +37,7 @@ namespace BattleCards.Controllers
 
             this.SignIn(userId);
 
-            return this.Redirect("/cards/all");
+            return this.Redirect("/");
         }
 
         public HttpResponse Register()
@@ -59,46 +53,37 @@ namespace BattleCards.Controllers
         [HttpPost]
         public HttpResponse Register(RegisterInputModel input)
         {
-            if (this.IsUserSignedIn())
+            if (string.IsNullOrEmpty(input.Username) || input.Username.Length < 5 || input.Username.Length > 20)
             {
-                return this.Redirect("/");
-            }
-
-            if (input.Password != input.ConfirmPassword)
-            {
-               return this.Error("Passwords should be similar!");
+                return this.Error("Username is required and should be between 5 and 20 characters.");
             }
 
             if (!this.usersService.IsUsernameAvailable(input.Username))
             {
-                return this.Error("Username already exist");
+                return this.Error("Username already taken.");
+            }
+
+            //Is email null or empty and is email valid input
+            if (string.IsNullOrEmpty(input.Email) || !new EmailAddressAttribute().IsValid(input.Email))
+            {
+                return this.Error("Invalid email address.");
             }
 
             if (!this.usersService.IsEmailAvailable(input.Email))
             {
-                return this.Error("The email is already taken!");
+                return this.Error("Email already taken.");
             }
 
-            if (input.Username == null || input.Username.Length < 5 || input.Username.Length > 20)
+            if (string.IsNullOrEmpty(input.Password) || input.Password.Length < 6 || input.Password.Length > 20)
             {
-                return this.Error("Invalid username. Username should be between 5 and 20 symbols");
+                return this.Error("Password should be between 6 and 20 characters.");
             }
 
-            if (!Regex.IsMatch(input.Username, @"^[a-zA-Z0-9\.]+$"))
+            if (input.Password != input.ConfirmPassword)
             {
-                return this.Error("Invalid username. Only alphanumeric characters are allowed");
+                return this.Error("Passwords do not match.");
             }
 
-            if (string.IsNullOrWhiteSpace(input.Email) || !new EmailAddressAttribute().IsValid(input.Email))
-            {
-                return this.Error("Invalid email!");
-            }
-
-            if (input.Password == null || input.Password.Length < 6 || input.Password.Length > 20)
-            {
-                return this.Error("Invalid password. The password should be between 6 and 20 symbols");
-            }
-            
             this.usersService.CreateUser(input.Username, input.Email, input.Password);
             return this.Redirect("/Users/Login");
         }
@@ -107,7 +92,7 @@ namespace BattleCards.Controllers
         {
             if (!this.IsUserSignedIn())
             {
-                return this.Error("Only logged-in users can logout!");
+                return this.Redirect("/");
             }
 
             this.SignOut();

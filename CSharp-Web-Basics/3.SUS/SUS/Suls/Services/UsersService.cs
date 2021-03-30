@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using BattleCards.Data;
-using SUS.MvcFramework;
+using Suls.Data;
 
-namespace BattleCards.Services
+namespace Suls.Services
 {
     public class UsersService : IUsersService
     {
@@ -17,31 +16,24 @@ namespace BattleCards.Services
             this.db = db;
         }
 
-        public string CreateUser(string username, string email, string password)
+        public void CreateUser(string username, string email, string password)
         {
             var user = new User
             {
                 Username = username,
                 Email = email,
-                Role = IdentityRole.User,
                 Password = ComputeHash(password),
             };
 
             this.db.Users.Add(user);
             this.db.SaveChanges();
-
-            return user.Id; 
         }
 
         public string GetUserId(string username, string password)
         {
-            var user = this.db.Users.FirstOrDefault(x => x.Username == username);
-            if (user?.Password != ComputeHash(password))
-            {
-                return null;
-            }
-
-            return user.Id;
+            var passwordHash = ComputeHash(password);
+            var user = this.db.Users.FirstOrDefault(x => x.Username == username && x.Password == passwordHash);
+            return user?.Id;
         }
 
         public bool IsUsernameAvailable(string username)
@@ -69,7 +61,7 @@ namespace BattleCards.Services
             {
                 hashedInputStringBuilder.Append(b.ToString("X2"));
             }
-                
+
             return hashedInputStringBuilder.ToString();
         }
     }
