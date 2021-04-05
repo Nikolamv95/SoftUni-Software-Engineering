@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Add Property";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="get" action="/Properties/ShowAddedProperty" class="col-md-6">
+    <div>
+        District: <input name="district" class="form-control" />
+    </div>
+    <hr />
+    <div>
+        Size: <input name="size" class="form-control" />
+    </div>
+    <hr />
+    <div>
+        Year: <input name="year" class="form-control" />
+    </div>
+    <hr />
+    <div>
+        Price: <input name="price" class="form-control" />
+    </div>
+    <hr />
+    <div>
+        <label for="propertyType">Choose a property type:</label>
+        <select id="propertyType" name="propertyType">
+            <option value="1-СТАЕН">1-СТАЕН</option>
+            <option value="АТЕЛИЕ, ТАВАН">АТЕЛИЕ, ТАВАН</option>
+            <option value="2-СТАЕН">2-СТАЕН</option>
+            <option value="3-СТАЕН">3-СТАЕН</option>
+            <option value="4-СТАЕН">4-СТАЕН</option>
+            <option value="МЕЗОНЕТ">МЕЗОНЕТ</option>
+            <option value="МНОГОСТАЕН">МНОГОСТАЕН</option>
+        </select>
+    </div>
+    <hr />
+    <div>
+        Building Type: <input name="buildingType" class="form-control" />
+    </div>
+    <hr />
+    <div>
+        Floor: <input name="floor" class="form-control" />
+    </div>
+    <input type="submit" class="btn btn-primary float-right" value="Add property" />
+</form>
