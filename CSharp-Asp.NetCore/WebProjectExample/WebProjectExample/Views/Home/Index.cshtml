@@ -1,0 +1,78 @@
+﻿@using WebProjectExample.ViewModels.Home
+@using System.Text;
+@using System.Xml.Serialization
+@using Microsoft.Extensions.Configuration
+@using WebProjectExample.Services
+@inject IShortStringService ShortString
+@model IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<br />
+<!--After the OnResultExecuting method form ResultFilter we enter in to the view-->
+<div class="text-center">
+    <h2>This data is injected trough ViewData.</h2>
+    <h2 class="display-4">Welcome, @ViewData["Name"]</h2>
+    <h2>The current year is @ViewData["Year"] and the amount of users on site are @ViewData["UsersCount"].</h2>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<br />
+<br />
+<h3>This data is injected trough ViewBag.</h3>
+
+<div class="text-center">
+    <h2>ViewBag -> @ViewBag.Name</h2>
+    <h2>h1>ViewBag -> @ViewBag.Year</h2>
+    <h2>ViewBag -> @ViewBag.UsersCount</h2>
+    @DateTime.UtcNow
+    @this.Context.User.Identity.Name
+</div>
+
+<br />
+<br />
+<h3>This data is injected trough ViewModel -> this is the best way to inject data.</h3>
+<div class="text-center .text-primary">
+    <h2 class="display-4">Welcome, @Model.Name with @Model.Id</h2>
+    <h2>The current year is @Model.Year and the amount of users on site are @Model.UsersCount.</h2>
+    <h2>Currently there are @Model.ProcessorCount processors working with @Model.Description</h2>
+    <h2 class="alert-success">This is with injected service @ShortString.GetShort(Model.Description, 2)</h2>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<br />
+<br />
+
+<!--With User we take the information which is written in cookie and the server for the user-->
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Welcome @User.Identity.Name</h1>
+}
+
+@section Links{ 
+    <li class="nav-item">
+        <a class="nav-link text-dark" href="https://Softuni.bg">SoftUni</a>
+    </li>
+}
+
+@section Scripts{ 
+    <script>
+        alert('home page!!!')
+    </script>
+}
+
+<!--Html Encoding / HTML Entities use &-->
+<h1>List&lt;string&gt;</h1>
+
+
+<!--With //@{} we ca write C# code inside without any problems-->
+@{
+    if (4 > 3)
+    {
+        //Do something
+    }
+}
+
+<h1>Time @(2*2)</h1> 

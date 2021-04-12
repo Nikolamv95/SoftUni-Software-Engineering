@@ -1,0 +1,65 @@
+﻿@using WebProjectExample.ViewModels.BestRecipes
+@addTagHelper *, WebProjectExample.TagHelpers.BootstrapTableTagHelper
+@model AddBestRecipesInputModel
+
+<h1 class="alert alert-heading alert-info">Add recipe</h1>
+
+<form method="post" class="col-md-6" enctype="multipart/form-data">
+    <!--This row shows the general validation mistakes which are not handled by the attributes-->
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <!--If we want to reuse this view with edit recipe functionality we have to extract the recipe from the DB with ID, paste the data in
+    the form and add one additional row <input type="hidden" asp-for="Id"/> With this row we will show the exat recipe and its values-->
+
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea rows="4" class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FirstCooked">First Cooked</label>
+        <input class="form-control" asp-for="FirstCooked">
+        <span asp-validation-for="FirstCooked" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type">Type</label>
+        <select class="form-control" asp-for="Type" asp-items="@Html.GetEnumSelectList<NewTypeFood>()"></select>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Time.CookingTime">CookingTime</label>
+        <input class="form-control" asp-for="Time.CookingTime">
+        <span asp-validation-for="Time.CookingTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Time.PreparationTime">PreparationTime</label>
+        <input class="form-control" asp-for="Time.PreparationTime">
+        <span asp-validation-for="Time.PreparationTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input class="form-control" asp-for="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<img src="/images/user.png" asp-append-version="true">
+
+@section scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+<!--In order to start the client side validation we have to activate this _ValidationScriptsPartial-->

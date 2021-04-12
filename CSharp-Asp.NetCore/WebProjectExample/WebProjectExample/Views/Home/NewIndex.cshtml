@@ -1,0 +1,40 @@
+﻿@using WebProjectExample.ViewModels.Home
+@using Microsoft.Extensions.Configuration
+@using WebProjectExample.Services
+@inject IConfiguration Configuration
+@inject IInstanceCounter InstanceCounter
+@model IndexViewModel
+<!--The logic of partial view is like the method concept. To reuse certain code!-->
+<partial name="_HomePageStart" model="@Model.Name" />
+
+<!--Using tag helper-->
+<form asp-action="NewIndex">
+    <textarea asp-for="Description"></textarea>
+    <input asp-for="Name" />
+    <input asp-for="Year" />
+</form>
+
+
+<h2>@this.Configuration["HelloMessage"]</h2>
+<h2>@this.Configuration["EmailSettings:Server:Url"]</h2>
+
+
+<!--Using html helper-->
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(x => x.Description)
+    @Html.EditorFor(x => x.Name)
+    @Html.EditorFor(x => x.Year)
+}
+
+<!--This is custom tag helper which gives additional functions to our table. You can find it in TagHelpers/BootstrapTableTagHelper-->
+<table bootstrap-table="" table-name="Digits table">
+    @for (int i = 0; i < 10; i++)
+    {
+        <tr><td>@i</td></tr>
+    }
+</table>
+
+
+<h1>Instances: @InstanceCounter.Instances</h1>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebProjectExample", "WebProjectExample\WebProjectExample.csproj", "{2C12E990-7931-4957-A6A0-35D289A102D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPnetCoreMiddlewareDemo", "ASPnetCoreMiddlewareDemo\ASPnetCoreMiddlewareDemo.csproj", "{4E7D8946-638F-4C36-9CB0-17DB8E2D2D24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C12E990-7931-4957-A6A0-35D289A102D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C12E990-7931-4957-A6A0-35D289A102D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C12E990-7931-4957-A6A0-35D289A102D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C12E990-7931-4957-A6A0-35D289A102D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7D8946-638F-4C36-9CB0-17DB8E2D2D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7D8946-638F-4C36-9CB0-17DB8E2D2D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7D8946-638F-4C36-9CB0-17DB8E2D2D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7D8946-638F-4C36-9CB0-17DB8E2D2D24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13531CFA-D31C-4766-A913-B0185AB64871}
+	EndGlobalSection
+EndGlobal
