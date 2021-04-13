@@ -1,0 +1,8 @@
+﻿@page "/softuni/{name:cyrillic}"
+@model WebProjectExample.Pages.Internal.TestModel
+@{
+    ViewData["Tittle"] = "Test Form";
+}
+
+<h1>Hello I`m custom page</h1>
+<h2>@Model.Name</h2>

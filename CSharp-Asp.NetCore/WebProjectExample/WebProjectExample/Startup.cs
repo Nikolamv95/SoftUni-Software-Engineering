@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using WebProjectExample.Data;
 using WebProjectExample.Filters;
 using WebProjectExample.ModelBinders;
+using WebProjectExample.RouteConstraints;
 using WebProjectExample.Services;
 
 namespace WebProjectExample
@@ -29,6 +30,12 @@ namespace WebProjectExample
 
             services.AddDefaultIdentity<IdentityUser>
                 (options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //Added custom constraint
+            services.AddRouting(options =>
+            {
+                options.ConstraintMap.Add("cyrillic", typeof(CyrillicRouteConstraints));
+            });
 
             //This is how we register filters Globally
             services.AddControllersWithViews(configure =>

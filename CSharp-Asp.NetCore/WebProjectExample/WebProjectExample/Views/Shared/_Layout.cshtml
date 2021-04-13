@@ -29,6 +29,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="NewIndex">NewIndex</a>
                         </li>
+                        <!--If we use RazorPages this is how we create link in the nav bar-->
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-page="/ContactForm">ContactForm</a>
+                        </li>
                         <!--This render body search for a sections with name Links and on every page show the code which is in the section-->
                         @RenderSection("Links", false)
 
