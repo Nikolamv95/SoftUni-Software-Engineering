@@ -39,7 +39,7 @@ namespace WebProjectExample
                 configure.Filters.Add(new MyResourceFilter());
                 configure.Filters.Add(new MyResultFilterAttribute());
                 configure.ModelBinderProviders.Insert(0,new ExtractYearModelBinderProvider());
-            });
+            }).AddXmlSerializerFormatters(); //With AddXmlSerializerFormatters we activate to return XML as a response in the body
 
             services.AddTransient<IShortStringService, ShortStringService>();
             services.AddTransient<IInstanceCounter, InstanceCounter>();

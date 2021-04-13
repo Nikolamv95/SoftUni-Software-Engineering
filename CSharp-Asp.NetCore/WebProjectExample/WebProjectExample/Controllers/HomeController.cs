@@ -74,7 +74,6 @@ namespace WebProjectExample.Controllers
 
         }
 
-
         public IActionResult NewIndex(int id)
         {
             var viewModel = new IndexViewModel();
@@ -90,6 +89,23 @@ namespace WebProjectExample.Controllers
 
             return View(viewModel);
         }
+
+        //Work WEB.API JSON Format
+        public IActionResult AjaxDemo()
+        {
+            return this.View();
+        }
+
+        public IActionResult AjaxDemoData()
+        {
+            return this.Json(new[]
+            {
+                new {Name = "Nikola", Date = DateTime.UtcNow.ToString("O")},
+                new {Name = "Stoqn", Date = DateTime.UtcNow.AddDays(1).ToString("O")},
+                new {Name = "Pesho", Date = DateTime.UtcNow.AddDays(2).ToString("O")}
+            });
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using WebProjectExample.Data;
 
 namespace WebProjectExample.ValidationAttributes
 {
@@ -16,6 +12,7 @@ namespace WebProjectExample.ValidationAttributes
         {
             this.minYear = minYear;
         }
+
         public override bool IsValid(object value)
         {
             //do something with minYear to validate the value -> Example
@@ -29,9 +26,6 @@ namespace WebProjectExample.ValidationAttributes
             }
 
             return false;
-
-
-            
         }
 
         //protected override ValidationResult IsValid(object value, ValidationContext validationContext)
