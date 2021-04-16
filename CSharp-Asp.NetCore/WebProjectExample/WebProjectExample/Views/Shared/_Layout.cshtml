@@ -7,6 +7,7 @@
     <title>@ViewData["Title"] - WebProjectExample</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    @this.RenderSection("Styles", false) <!--You have to register every section depending the position which will be-->
 </head>
 <body>
     <header>

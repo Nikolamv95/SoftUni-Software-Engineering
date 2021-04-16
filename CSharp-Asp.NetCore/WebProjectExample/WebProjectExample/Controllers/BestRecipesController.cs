@@ -92,5 +92,10 @@ namespace WebProjectExample.Controllers
         {
             return this.PhysicalFile(this.webHostEnvironment.WebRootPath + "/images/user.png", "image/png");
         }
+
+        public IActionResult HighCharts()
+        {
+            return this.View();
+        }
     }
 }
