@@ -17,6 +17,7 @@
     <h2 class="display-4">Welcome, @ViewData["Name"]</h2>
     <h2>The current year is @ViewData["Year"] and the amount of users on site are @ViewData["UsersCount"].</h2>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>This is the @Model.ReadSession</p>
 </div>
 
 <br />
@@ -27,7 +28,15 @@
     <h2>ViewBag -> @ViewBag.Name</h2>
     <h2>h1>ViewBag -> @ViewBag.Year</h2>
     <h2>ViewBag -> @ViewBag.UsersCount</h2>
-    @DateTime.UtcNow
+
+    <cache vary-by-query="id">
+        <h1>@DateTime.UtcNow</h1>
+    </cache>
+
+    <cache expires-after="TimeSpan.FromMinutes(10)">
+        <vc:registered-users title="Registered users"></vc:registered-users>
+    </cache>
+
     @this.Context.User.Identity.Name
 </div>
 
@@ -51,13 +60,13 @@
     <h1>Welcome @User.Identity.Name</h1>
 }
 
-@section Links{ 
+@section Links{
     <li class="nav-item">
         <a class="nav-link text-dark" href="https://Softuni.bg">SoftUni</a>
     </li>
 }
 
-@section Scripts{ 
+@section Scripts{
     <script>
         alert('home page!!!')
     </script>

@@ -50,16 +50,20 @@
     </div>
 
     <footer class="border-top footer text-muted">
+
         <div class="container">
-            &copy; 2021 - WebProjectExample - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> 
-            - <vc:registered-users title="Registered users"></vc:registered-users>
+            &copy; 2021 - WebProjectExample - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            -  <cache expires-after="TimeSpan.FromMinutes(10)">
+                <vc:registered-users title="Registered users"></vc:registered-users>
+            </cache>
         </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
-<!--The same logic as with Links-->
-@RenderSection("Scripts", required: false)
+    <!--The same logic as with Links-->
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

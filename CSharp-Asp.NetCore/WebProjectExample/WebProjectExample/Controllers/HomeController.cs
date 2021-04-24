@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using WebProjectExample.Data;
 using WebProjectExample.Models;
 using WebProjectExample.Services;
@@ -58,6 +59,9 @@ namespace WebProjectExample.Controllers
 
             viewModel.Description = this.shortStringService.GetShort(viewModel.Description, 10);
 
+
+            //Read session
+            viewModel.ReadSession = this.HttpContext.Session.Keys.Contains("ReadSession");
             return View(viewModel);
         }
 
@@ -96,6 +100,7 @@ namespace WebProjectExample.Controllers
             return this.View();
         }
 
+        [ResponseCache(Duration = 24 * 60 * 60)]
         public IActionResult AjaxDemoData()
         {
             return this.Json(new[]
@@ -105,7 +110,6 @@ namespace WebProjectExample.Controllers
                 new {Name = "Pesho", Date = DateTime.UtcNow.AddDays(2).ToString("O")}
             });
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -124,6 +128,12 @@ namespace WebProjectExample.Controllers
             {
                 return this.Redirect("Error");
             }
+        }
+
+        public IActionResult ReadSession()
+        {
+            this.HttpContext.Session.SetString("ReadSession", "true");
+            return this.View();
         }
     }
 }
