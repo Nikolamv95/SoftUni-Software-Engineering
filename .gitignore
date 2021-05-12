@@ -366,7 +366,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 *.map
-*.js
 *.css
 *.txt
 CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/LICENSE
