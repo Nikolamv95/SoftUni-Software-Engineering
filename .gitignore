@@ -370,3 +370,17 @@ FodyWeavers.xsd
 *.txt
 CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/LICENSE
 *.md
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/js/site.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation/dist/additional-methods.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation/dist/additional-methods.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery/dist/jquery.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery/dist/jquery.min.js
+CSharp-Asp.NetCore/DockerDemo/DockerDemo/DockerDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.js
+JS-Advanced/1.SyntaxFunctionsAndStatements/1.Lecture/index.html
