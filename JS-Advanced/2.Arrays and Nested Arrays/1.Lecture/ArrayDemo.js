@@ -89,7 +89,7 @@ let arrayFunc2 = [10, 20, 30, 40];
 console.log(arrayFunc2.length); // 4
 console.log(arrayFunc2.push(10)); // 5
 
-// SHIF removes the firs element and returns it as a value - Queue C#
+// SHIFT removes the firs element and returns it as a value - Queue C#
 let arrayFunc3 = [10, 20, 30, 40];
 console.log(arrayFunc3.length); // 4
 console.log(arrayFunc3.shift()); // 10
