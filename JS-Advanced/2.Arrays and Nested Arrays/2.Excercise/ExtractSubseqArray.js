@@ -1,20 +1,29 @@
 function extractArr(array) {
 
     const result = [];
-    let prevNum = 0;
-    let currNum = 0;
     for (let i = 0; i < array.length; i++) {
 
-        currNum = array[i]
+        let currNum = array[i]
 
-        if (currNum > prevNum) {
+        if (currNum >= result[result.length - 1] || result.length === 0) {
             result.push(currNum);
         }
-
-        prevNum = array[i];
     }
 
     return result;
+}
+
+// or with reduce
+
+function solve(arr) {
+    return arr.reduce(function (result, currentValue, index, initiialArray) {
+
+        if (currentValue >= result[result.length - 1] || result.length === 0) {
+            result.push(currentValue);
+        }
+        
+        return result;
+    }, [])
 }
 
 console.log(extractArr([1, 3, 8, 4, 10, 12, 3, 2, 24]));
