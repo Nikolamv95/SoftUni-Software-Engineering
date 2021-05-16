@@ -24,6 +24,7 @@ console.log(myObject2.name);
 myObject2.newProperty = 'newProperty';
 console.log(myObject2.newProperty);
 //or
+// create new property and add value to it
 myObject2['heigth'] = 170
 console.log(myObject2['heigth']) // with string - sometimes
 // or with empty space. If we have such a property we can only
@@ -39,3 +40,10 @@ console.log(myObject2);
 let newProperty = 'newProperty';
 delete myObject2[newProperty];
 console.log(myObject2)
+
+//// Task 7 - Destructor let {prop1, prop2} = myObject2 (the program will check if
+// myObject2 contains these props and will assign their values. After that the values
+// are accessible)
+let {age, name} = myObject2;
+console.log(age);
+console.log(name);

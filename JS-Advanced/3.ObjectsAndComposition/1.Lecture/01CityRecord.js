@@ -4,8 +4,7 @@ function cityRecord(name, population, treasury) {
         population: population,
         treasury: treasury,
     };
-
-    delete city.name;
+    
     return city;
 }
 
