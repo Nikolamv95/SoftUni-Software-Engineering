@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <h1 id="title">Hello, Dom</h1>
+    <ul>
+        <li>DOM Methods Example</li>
+        <li>DOM Properties Example</li>
+    </ul>
+    <button onclick="console.log('Code from event handler')">Click me</button>
+        <input id="username-input" name="username" type="text"/>
+        <input type="text"/>
+        <button class="submit-btn">Submit form</button>
+</body>
+</html>
+
+<!-- // Create function  -->
+<script>
+    function sum(a,b){
+        return a + b;
+    }
+    console.log('from inline script');
+</script>
+
+<!-- Get element by id  -->
+<script>
+    function start(){
+        const userNameInput = document.getElementById('username-input');
+        console.log(userNameInput.value)
+    }
+</script>
+
+<!-- Get elements by tag name -->
+<script>
+    function startElement(){
+        const liElements = document.getElementsByTagName('li');
+         return liElements;
+    }
+</script>
+
+<!-- Get elements by tag name and iterate over it -->
+<script>
+    function startLi(){
+        const liElements = document.getElementsByTagName('li');
+        for (const el of liElements) {
+            console.log(el);
+        }
+    }
+</script>
+
+<!-- Destruct to array -->
+<script>
+    function startLiVar2(){
+        const liElements = document.getElementsByTagName('li');
+        //[...liElements].forEach(x=> console.log(x));
+        // or Array.from which works everywhere
+        Array.from(liElements).map(x=> console.log(x))
+    }
+</script>
+
+<!-- Get elements by class name -->
+<script>
+    function startClass(){
+        const btn = document.getElementsByClassName('submit-btn')[0];
+         return btn;
+    }
+</script>
